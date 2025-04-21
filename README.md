@@ -24,6 +24,34 @@ Este é um microsserviço de demonstração que implementa Feature Flags utiliza
 - **Estado Padrão**: Desativado
 - **Impacto**: Afeta a visualização da página de listagem de produtos
 
+## 🏢 Estratégia de Ativação por ID de Filial
+
+O sistema permite ativar features para filiais específicas usando seus IDs.
+
+### Como usar
+
+1. Acesse a página incluindo o ID da filial como query parameter:
+2. A feature será ativada apenas se o ID da filial estiver na lista configurada.
+
+Para usar, basta acessar a URL com o parâmetro `filialId`:
+- Para filiais na lista (ex: 1,2,3,4,5): verá o novo layout
+- Para outras filiais: verá o layout padrão
+
+Exemplo:
+
+### Configuração
+
+No `application.yml`:
+```yaml
+togglz:
+  features:
+    LAYOUT_NEW:
+      enabled: true
+      strategy: filial-id-strategy
+      param:
+        filialIds: "1,2,3,4,5"
+```
+
 ## 🖥️ Console de Administração
 
 O Togglz fornece um console de administração web para gerenciar as feature flags:
@@ -50,7 +78,7 @@ O Togglz fornece um console de administração web para gerenciar as feature fla
 2. Build do projeto
 3. Execute a aplicação
 4. Acesse:
-- Aplicação: `http://localhost:8081/produto`
+- Aplicação: `http://localhost:8081/produto?filialId=1`
 - Console Togglz: `http://localhost:8081/togglz-console`
 
 ## 🔒 Segurança
