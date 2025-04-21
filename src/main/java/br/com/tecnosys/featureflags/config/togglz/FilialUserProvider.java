@@ -1,6 +1,5 @@
 package br.com.tecnosys.featureflags.config.togglz;
 
-import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.togglz.core.user.FeatureUser;
