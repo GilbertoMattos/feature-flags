@@ -43,11 +43,11 @@ public class FilialIdActivationStrategy implements ActivationStrategy {
 
     @Override
     public Parameter[] getParameters() {
-        return new Parameter[] {
-            ParameterBuilder.create(PARAM_FILIAL_IDS)
-                .label("IDs das Filiais")
-                .description("Lista de IDs das filiais separados por vírgula (ex: 1,2,3)")
-                .optional()
+        return new Parameter[]{
+                ParameterBuilder.create(PARAM_FILIAL_IDS)
+                        .label("IDs das Filiais")
+                        .description("Lista de IDs das filiais separados por vírgula (ex: 1,2,3)")
+                        .optional()
         };
     }
 }
