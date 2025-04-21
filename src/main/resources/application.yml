@@ -20,6 +20,9 @@ management:
 togglz:
   features:
     LAYOUT_NEW:
-      enabled: false
+      enabled: true
+      strategy: filial-id-strategy
+      param:
+        filialIds: "1,2,3,4,5"
   console:
     secured: false
