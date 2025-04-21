@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: feature-flags
+  mvc:
+    static-path-pattern: /**
+  web:
+    resources:
+      add-mappings: true
+      static-locations: classpath:/static/
+server:
+  port: 8081
+gg:
+  jte:
+    development-mode: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, togglz, info, metrics
+togglz:
+  features:
+    LAYOUT_NEW:
+      enabled: false
+  console:
+    secured: false
